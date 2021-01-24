@@ -12,22 +12,35 @@ describe('Test suite', () => {
         cy.login();
     })
 
-   /* it ('CreateNewCountry',()=>{
+    it ('CreateNewCountry',()=>{
         cy.navigateToTheCountryList();
         accessGroupPo.getAddCountryBtn().click({force:true});
-        accessGroupPo.getCountryNameField().type('ACountry');
-        accessGroupPo.getLongCountryCodeField().type('LON');
-        accessGroupPo.getShortCountryCodeField().type('Sh');
-        accessGroupPo.getDefaultInvestorTypeDropDownList().type('Employee{enter}');
+        accessGroupPo.getCountryNameField().type('ACountry',{force:true});
+        accessGroupPo.getLongCountryCodeField().type('LON',{force:true});
+        accessGroupPo.getShortCountryCodeField().type('Sh',{force:true});
+        accessGroupPo.getVontobelDefaultinvestorType().type('Employee{enter}',{force:true});
+        accessGroupPo.getDeritradeDefaultInvestorType().type('Employee{enter}',{force:true});
+        accessGroupPo.getTwentyfourDefaultInvestorType().type('Employee{enter}',{force:true});
         accessGroupPo.getSaveBtn().click();
-    })*/
+        cy.checkAdminStatus(true);
+    })
 
     it('EditCountry',()=>{
         cy.navigateToTheCountryList();
+        accessGroupPo.getFirstElementFromTheList().click({force:true});
         accessGroupPo.getEditCountryBtn().type('Edit{enter}',{force:true});
+        accessGroupPo.getCountryNameField().type('AAA',{force:true});
+        accessGroupPo.getSaveBtn().click();
+        cy.checkAdminStatus(true);
     })
 
     it('DeleteCountry',()=>{
         cy.navigateToTheCountryList();
+        accessGroupPo.getDeleteBtn().click({force:true});
+        accessGroupPo.getSubmitDeleteBtn().click();
+        cy.checkAdminStatus(true);
     })
+
+
 })
+

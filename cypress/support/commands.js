@@ -16,3 +16,7 @@ Cypress.Commands.add('navigateToTheCountryList', ()=>{
     cy.get('.admin-list').find('.label').eq(2).contains('Country list').click();
 })
 
+Cypress.Commands.add("checkAdminStatus", () => {
+        cy.get('.messages').should('have.class', 'messages');
+});
+

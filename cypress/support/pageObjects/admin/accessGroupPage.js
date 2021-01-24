@@ -12,16 +12,32 @@ module.exports = class AccessGroupClass {
     getShortCountryCodeField(){
         return cy.get('#edit-code-short-0-value');
     }
-    getDefaultInvestorTypeDropDownList(){
-        return cy.get('#edit_default_investort_type_chosen > .chosen-single > span');
+    getVontobelDefaultinvestorType(){
+        return cy.get('.chosen-search > .chosen-search-input').eq(1);
     }
-    getInvestorTypeFromTheList(){
-
+    getDeritradeDefaultInvestorType(){
+        return cy.get('.chosen-search > .chosen-search-input').eq(2);
+    }
+    getTwentyfourDefaultInvestorType(){
+        return cy.get('.chosen-search > .chosen-search-input').eq(3);
     }
     getSaveBtn(){
         return cy.get('#edit-submit');
     }
+    getSuccessMessage(){
+        return cy.get('.messages');
+    }
     getEditCountryBtn(){
         return cy.get(':nth-child(1) > :nth-child(3) > .dropbutton-wrapper > .dropbutton-widget > .dropbutton > .edit > a');
     }
+    getFirstElementFromTheList(){
+        return cy.get('.dropbutton').first();
+    }
+    getDeleteBtn(){
+        return cy.get(':nth-child(1) > :nth-child(3) > .dropbutton-wrapper > .dropbutton-widget > .dropbutton > .delete > a');
+    }
+    getSubmitDeleteBtn(){
+        return cy.get('#edit-submit');
+    }
+
     }
