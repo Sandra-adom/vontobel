@@ -16,6 +16,12 @@ Cypress.Commands.add('navigateToTheCountryList', ()=>{
     cy.get('.admin-list').find('.label').eq(2).contains('Country list').click();
 })
 
+Cypress.Commands.add('navigateToTheCountryGroupList', ()=>{
+    cy.get('.toolbar-icon-admin-vontobel').click();
+    cy.get('.admin-list').find('.label').eq(0).contains('Access groups').click();
+    cy.get('.admin-list').find('.label').eq(1).contains('Country group list').click();
+})
+
 Cypress.Commands.add("checkAdminStatus", () => {
         cy.get('.messages').should('have.class', 'messages');
 });

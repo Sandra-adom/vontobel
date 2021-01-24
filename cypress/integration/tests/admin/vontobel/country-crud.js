@@ -28,7 +28,7 @@ describe('Test suite', () => {
     it('EditCountry',()=>{
         cy.navigateToTheCountryList();
         accessGroupPo.getFirstElementFromTheList().click({force:true});
-        accessGroupPo.getEditCountryBtn().type('Edit{enter}',{force:true});
+        accessGroupPo.getEditBtn().type('Edit{enter}',{force:true});
         accessGroupPo.getCountryNameField().type('AAA',{force:true});
         accessGroupPo.getSaveBtn().click();
         cy.checkAdminStatus(true);

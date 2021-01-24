@@ -27,7 +27,7 @@ module.exports = class AccessGroupClass {
     getSuccessMessage(){
         return cy.get('.messages');
     }
-    getEditCountryBtn(){
+    getEditBtn(){
         return cy.get(':nth-child(1) > :nth-child(3) > .dropbutton-wrapper > .dropbutton-widget > .dropbutton > .edit > a');
     }
     getFirstElementFromTheList(){
@@ -39,5 +39,10 @@ module.exports = class AccessGroupClass {
     getSubmitDeleteBtn(){
         return cy.get('#edit-submit');
     }
-
+    getAddCountryGroupBtn(){
+        return cy.get('.button');
+    }
+    getCountryGroupNameField(){
+        return cy.get('#edit-name-0-value');
+    }
     }
