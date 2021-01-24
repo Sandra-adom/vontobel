@@ -12,35 +12,30 @@ describe('Test suite', () => {
         cy.login();
     })
 
-    it ('CreateNewCountry',()=>{
-        cy.navigateToTheCountryList();
-        accessGroupPo.getAddBtn().click({force:true});
-        accessGroupPo.getNameField().type('ACountry',{force:true});
-        accessGroupPo.getLongCountryCodeField().type('LON',{force:true});
-        accessGroupPo.getShortCountryCodeField().type('Sh',{force:true});
-        accessGroupPo.getVontobelDefaultinvestorType().type('Employee{enter}',{force:true});
-        accessGroupPo.getDeritradeDefaultInvestorType().type('Employee{enter}',{force:true});
-        accessGroupPo.getTwentyfourDefaultInvestorType().type('Employee{enter}',{force:true});
+     it ('Create new access group',()=>{
+        cy.navigateToTheAccessGroupList();
+        accessGroupPo.getAddBtn().click();
+        accessGroupPo.getNameField().type('AAccessGroup');
         accessGroupPo.getSaveBtn().click();
         cy.checkAdminStatus(true);
     })
 
-    it('EditCountry',()=>{
-        cy.navigateToTheCountryList();
+   it ('Edit new access group',()=>{
+        cy.navigateToTheAccessGroupList();
         accessGroupPo.getFirstElementFromTheList().click({force:true});
         accessGroupPo.getEditBtn().type('Edit{enter}',{force:true});
         accessGroupPo.getNameField().type('AAA',{force:true});
         accessGroupPo.getSaveBtn().click();
         cy.checkAdminStatus(true);
+
     })
 
-    it('DeleteCountry',()=>{
-        cy.navigateToTheCountryList();
+    it ('Delete new acces group',()=>{
+        cy.navigateToTheAccessGroupList();
         accessGroupPo.getDeleteBtn().click({force:true});
         accessGroupPo.getSubmitDeleteBtn().click();
         cy.checkAdminStatus(true);
+
     })
-
-
 })
 

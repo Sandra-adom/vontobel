@@ -1,9 +1,9 @@
 module.exports = class AccessGroupClass {
     
-    getAddCountryBtn() {
+    getAddBtn() {
         return cy.get('.button');
     }
-    getCountryNameField() {
+    getNameField() {
         return cy.get('#edit-name-0-value');
     }
     getLongCountryCodeField(){
@@ -38,11 +38,5 @@ module.exports = class AccessGroupClass {
     }
     getSubmitDeleteBtn(){
         return cy.get('#edit-submit');
-    }
-    getAddCountryGroupBtn(){
-        return cy.get('.button');
-    }
-    getCountryGroupNameField(){
-        return cy.get('#edit-name-0-value');
     }
     }

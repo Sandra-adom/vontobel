@@ -14,8 +14,8 @@ describe('Test suite', () => {
 
      it ('Create new country group',()=>{
         cy.navigateToTheCountryGroupList();
-        accessGroupPo.getAddCountryGroupBtn().click();
-        accessGroupPo.getCountryGroupNameField().type('ACountryGroup');
+        accessGroupPo.getAddBtn().click();
+        accessGroupPo.getNameField().type('ACountryGroup');
         accessGroupPo.getSaveBtn().click();
         cy.checkAdminStatus(true);
     })
@@ -23,7 +23,7 @@ describe('Test suite', () => {
     it ('Edit new country group',()=>{
         cy.navigateToTheCountryGroupList();
         accessGroupPo.getEditBtn().click({force:true});
-        accessGroupPo.getCountryGroupNameField().type('AA');
+        accessGroupPo.getNameField().type('AA');
         accessGroupPo.getSaveBtn().click();
         cy.checkAdminStatus(true);
     })
