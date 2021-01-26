@@ -19,13 +19,27 @@ Cypress.Commands.add('navigateToTheCountryList', ()=>{
 Cypress.Commands.add('navigateToTheAccessGroupList', ()=>{
     cy.get('.toolbar-icon-admin-vontobel').click();
     cy.get('.admin-list').find('.label').eq(0).contains('Access groups').click();
-    cy.get('.admin-list').find('.label').eq(1).contains('Country group list').click();
+    cy.get('.admin-list').find('.label').eq(0).contains('Access groups list').click();
 })
 
 Cypress.Commands.add('navigateToTheCountryGroupList', ()=>{
     cy.get('.toolbar-icon-admin-vontobel').click();
     cy.get('.admin-list').find('.label').eq(0).contains('Access groups').click();
     cy.get('.admin-list').find('.label').eq(1).contains('Country group list').click();
+})
+
+Cypress.Commands.add('navigateToTheInvestorTypeGroupList', ()=>{
+    cy.get('.toolbar-icon-admin-vontobel').click();
+    cy.get('.toolbar-icon-admin-vontobel').click();
+    cy.get('.admin-list').find('.label').eq(0).contains('Access groups').click();
+    cy.get('.admin-list').find('.label').eq(3).contains('Investor type group list').click();
+})
+
+Cypress.Commands.add('navigateToTheInvestorTypeList', ()=>{
+    cy.get('.toolbar-icon-admin-vontobel').click();
+    cy.get('.toolbar-icon-admin-vontobel').click();
+    cy.get('.admin-list').find('.label').eq(0).contains('Access groups').click();
+    cy.get('.admin-list').find('.label').eq(4).contains('Investor type list').click();
 })
 
 Cypress.Commands.add("checkAdminStatus", () => {

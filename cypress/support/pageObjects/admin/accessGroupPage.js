@@ -28,15 +28,28 @@ module.exports = class AccessGroupClass {
         return cy.get('.messages');
     }
     getEditBtn(){
-        return cy.get(':nth-child(1) > :nth-child(3) > .dropbutton-wrapper > .dropbutton-widget > .dropbutton > .edit > a');
-    }
-    getFirstElementFromTheList(){
-        return cy.get('.dropbutton').first();
+        return cy.get('.edit');
     }
     getDeleteBtn(){
-        return cy.get(':nth-child(1) > :nth-child(3) > .dropbutton-wrapper > .dropbutton-widget > .dropbutton > .delete > a');
+        return cy.get('.delete.dropbutton-action');
     }
     getSubmitDeleteBtn(){
         return cy.get('#edit-submit');
     }
+    getDropDownToggle(){
+        return cy.get('.dropbutton-toggle');
+    }
+    getDeleteBtn(){
+        return cy.get('.delete').last();
+    }
+    getInvestorTypeGroupField(){
+        return cy.get('#edit_investor_type_group_chosen > .chosen-choices > .search-field > .chosen-search-input');
+    }
+    getCountryGroupField(){
+        return cy.get('#edit_country_group_chosen > .chosen-choices > .search-field > .chosen-search-input');
+    }
+    getClassificationField(){
+        return cy.get('.search-field > .chosen-search-input');
+    }
+
     }
