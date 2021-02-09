@@ -1,6 +1,6 @@
 /// <reference types="Cypress" />
-const mainPO = require ('../../../../support/pageObjects/admin/main');
-const accessGroupPO = require ('../../../../support/pageObjects/admin/accessGroupPage')
+const mainPO = require ('../../../../../support/pageObjects/admin/main');
+const accessGroupPO = require ('../../../../../support/pageObjects/admin/accessGroupPage')
 const mainPo = new mainPO;
 const accessGroupPo = new accessGroupPO;
 

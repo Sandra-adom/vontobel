@@ -1,5 +1,6 @@
 {
     "baseUrl": "https://master:LookingGood@vontobel-demo.metasite.lt/",
+    "deritradeDemo": "https://master:LookingGood@deritrade-demo.metasite.lt",
     "viewportWidth": 1920,
     "viewportHeight": 1080,
     "admin-username": "admin",

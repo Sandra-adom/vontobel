@@ -1,3 +1,5 @@
+require('cypress-iframe');
+
 Cypress.Commands.add("login", () => {
     cy.visit('/user/login');
     cy.get('#edit-name').type(Cypress.config('admin-username'));
@@ -42,7 +44,23 @@ Cypress.Commands.add('navigateToTheInvestorTypeList', ()=>{
     cy.get('.admin-list').find('.label').eq(4).contains('Investor type list').click();
 })
 
+Cypress.Commands.add('navigateToTheCompanyList', ()=>{
+    cy.get('.toolbar-icon-admin-vontobel').click();
+    cy.get('.admin-list > :nth-child(2) > a').click();
+})
+
+Cypress.Commands.add('navigateToThePeopleList', ()=>{
+    cy.get('.toolbar-icon-admin-vontobel').click();
+    cy.get('.menu-item.open > :nth-child(2) > :nth-child(2) > :nth-child(1) > .toolbar-handle > .label').click();
+    cy.get(':nth-child(2) > .menu-item.open > .toolbar-menu > :nth-child(2) > .toolbar-box > .toolbar-icon').click();
+})
+
+
 Cypress.Commands.add("checkAdminStatus", () => {
         cy.get('.messages').should('have.class', 'messages');
 });
+
+Cypress.Commands.add("getVerticalMenuItem", () => {
+    return cy.get('#toolbar-item-administration-tray > .clearfix > .toolbar-toggle-orientation > .toolbar-lining > .toolbar-icon').click();
+})
 
