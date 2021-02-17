@@ -15,4 +15,7 @@ getCountryListMenuItem(){
 getPageTitle(){
     return cy.get('.js-quickedit-page-title');
 }
+getSubmitBtn(){
+    return cy.get('#edit-submit');
+}
 }
