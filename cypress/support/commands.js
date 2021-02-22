@@ -1,4 +1,5 @@
 require('cypress-iframe');
+require('cypress-file-upload');
 
 Cypress.Commands.add("login", () => {
     cy.visit('/user/login');
@@ -62,5 +63,10 @@ Cypress.Commands.add("checkAdminStatus", () => {
 
 Cypress.Commands.add("getVerticalMenuItem", () => {
     return cy.get('#toolbar-item-administration-tray > .clearfix > .toolbar-toggle-orientation > .toolbar-lining > .toolbar-icon').click();
+})
+
+Cypress.Commands.add("fileUpload", () => {
+    const file = 'Doc2.docx';
+    cy.get('#edit-file-0-upload').attachFile(file);
 })
 

@@ -12,7 +12,7 @@ describe('Test suite', () => {
         cy.login();
     })
 
-   /* it('Create new access group', () => {
+    it('Create new access group', () => {
         cy.navigateToTheAccessGroupList();
         accessGroupPo.getAddBtn().contains('Add Access group').click({ force: true });
         accessGroupPo.getNameField().type('AAccessGroup');
@@ -65,7 +65,7 @@ describe('Test suite', () => {
         accessGroupPo.getSaveBtn().click();
         cy.checkAdminStatus(true);
 
-    })*/
+    })
 
     it('Delete new acces group', () => {
         cy.navigateToTheAccessGroupList();
