@@ -18,4 +18,13 @@ getPageTitle(){
 getSubmitBtn(){
     return cy.get('#edit-submit');
 }
+getEditBtn(){
+    return cy.get('.edit > a');
+}
+getDeleteBtn(){
+    return cy.get('.delete > a');
+}
+getConfirmationWindowTitle(){
+    return cy.get('.js-quickedit-page-title');
+}
 }
