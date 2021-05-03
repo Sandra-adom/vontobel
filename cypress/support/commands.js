@@ -1,5 +1,6 @@
 require('cypress-iframe');
 require('cypress-file-upload');
+require('cypress-wait-until');
 
 Cypress.Commands.add("login", () => {
     cy.visit('/user/login');

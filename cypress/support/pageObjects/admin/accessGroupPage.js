@@ -4,7 +4,8 @@ module.exports = class AccessGroupClass {
         return cy.get('.button');
     }
     getNameField() {
-        return cy.get('#edit-name-0-value');
+        //return cy.get('#edit-name-0-value');
+       return cy.get('body').find('#edit-name-0-value')
     }
     getLongCountryCodeField(){
         return cy.get('#edit-code-0-value');
@@ -95,5 +96,29 @@ module.exports = class AccessGroupClass {
     }
     getViewImg(){
         return cy.get('.field--type-entity-reference > .eb-tabs li');
+    }
+    getFirstNameField(){
+        return cy.get('#edit-field-first-name-0-value');
+    }
+    getLastNamefield(){
+        return cy.get('#edit-field-last-name-0-value');
+    }
+    getBusinessEmailField(){
+        return cy.get('#edit-mail');
+    }
+    getPhoneField(){
+        return cy.get('#edit-field-phone-0-value');
+    }
+    getStreetAddressField(){
+        return cy.get('#edit-field-address-0-address-address-line1');
+    }
+    getPostalCodeField(){
+        return cy.get('#edit-field-address-0-address-postal-code');
+    }
+    getCityField(){
+        return cy.get('#edit-field-address-0-address-locality');
+    }
+    getSubmitBtn(){
+        return cy.get('#edit-submit');
     }
     }

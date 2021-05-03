@@ -1,5 +1,7 @@
 const accessGroupPO = require('../../pageObjects/admin/accessGroupPage');
 const accessGroupPo = new accessGroupPO;
+const mainPO = require('../../../support/pageObjects/admin/main');
+const mainPo = new mainPO;
 
 module.exports = class Routines {
 createNewCountry(CountryName="ACountry",LongCode='COU',ShortCode='CO',VntbInvestor='Employee',VontInvtype,VontInvtype1,DeritInvest='Employee',DeritInvestType='',Twentnvest='Employee',TwentInvestType=''){
@@ -57,6 +59,29 @@ createNewCountryWithTwoInvestorType(CountryName="ACountry",LongCode='COU',ShortC
     accessGroupPo.getCountryStatusCheckbox().click();
   //  accessGroupPo.getSaveBtn().click();
   //  cy.checkAdminStatus(true);
+}
+
+createCompany(){
+  cy.navigateToTheCompanyList();
+  mainPo.getPageTitle().should('contain.text', 'Company entities');
+  accessGroupPo.getAddBtn().click();
+  cy.wait(2000);
+  accessGroupPo.getNameField().type('A Company name');
+  accessGroupPo.getWhiteListedDomainsField().type("AAADomain");
+  cy.frameLoaded('#entity_browser_iframe_media_entity_browser');
+  cy.iframe().find('.view-content .views-row').first().click();
+  cy.iframe().find('.is-entity-browser-submit').click();
+  cy.wait(5000);
+  accessGroupPo.getSaveBtn().click();
+}
+
+deleteCompany(){
+  cy.navigateToTheCompanyList();
+  mainPo.getPageTitle().should('contain.text', 'Company entities');
+  accessGroupPo.getDropDownToggle().last().click();
+  accessGroupPo.getDeleteBtn().last().click();
+  accessGroupPo.getSubmitDeleteBtn().click();
+  cy.checkAdminStatus(true);
 }
 
 

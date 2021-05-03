@@ -18,7 +18,7 @@ describe('Test suite', () => {
         rout.createNewCountry();
     })
 
-    it('Create new country with Employee investor type', () => {
+    /*it('Create new country with Employee investor type', () => {
         cy.navigateToTheCountryList();
         accessGroupPo.getAddBtn().click({ force: true });
         accessGroupPo.getNameField().type('Employee Investors', { force: true });
@@ -50,6 +50,6 @@ describe('Test suite', () => {
         accessGroupPo.getDeleteBtn().first().contains('Delete').click({ force: true });
         accessGroupPo.getSubmitDeleteBtn().click();
         cy.checkAdminStatus(true);
-    })
+    })*/
 })
 
